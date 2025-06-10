@@ -21,11 +21,23 @@ class MovieController extends Controller
         return view('movie.detailmovie', compact('movie'));
     }
 
-    public function create()    
+    public function create()
     {
         $categories = Category::all();
         return view('create_movie', compact('categories'));
     }
+
+
+///public function delete($id)
+///  {
+///      if (Gate::allows('delete')) {
+///         echo "Delete Movie %id";
+///      } else {
+///         abort(403);
+///    }
+/// }
+
+
 
     public function store(Request $request)
     {
